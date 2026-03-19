@@ -16,6 +16,17 @@ The analysis goes beyond standard predictive modeling by grounding the data engi
 * `02_predictive_modeling.ipynb`: The machine learning pipeline featuring a scikit-learn `ColumnTransformer`, XGBoost training, rigorous PR-AUC evaluation, and SHAP visualizations.
 * `icu_data_engineered.csv`: The cleaned and engineered dataset ready for model consumption. *(Note: Ensure this is added to your .gitignore if the file is too large or contains sensitive data).*
 
+## Data Setup & Reproducibility
+The raw dataset for this project was programmatically ingested via the Kaggle API. 
+
+**To run the EDA notebook from scratch:**
+1. Ensure you have the `kaggle` library installed (included in `requirements.txt`).
+2. Obtain your personal `kaggle.json` API token from your Kaggle account settings.
+3. Place the `kaggle.json` file in the root directory (or your local `~/.kaggle/` folder).
+4. Run `01_eda.ipynb` to fetch the raw data and generate the engineered features.
+
+*Alternatively, you can skip the data ingestion phase and proceed directly to `02_predictive_modeling.ipynb` using the provided `icu_data_engineered.csv` file.*
+
 ## Methodology & Results
 The final XGBoost model successfully identifies high-risk patients. More importantly, the SHAP summary analysis validates that the model's predictions are primarily driven by critical indicators of systemic dysfunction, including:
 * **Renal Impairment:** Elevated BUN and decreased urine output.
