@@ -33,6 +33,19 @@ The final XGBoost model successfully identifies high-risk patients. More importa
 * **Metabolic Stress:** High lactate levels acting as a proxy for tissue hypoperfusion.
 * **Hemodynamic Instability:** Severe fluctuations in arterial pressure and heart rate.
 
+## Interactive Clinical Dashboard
+This project includes a Streamlit web application that deploys the trained XGBoost model as a Clinical Decision Support (CDS) tool. Users can adjust a patient's physiological markers in real-time to observe changes in mortality risk and see the driving factors via SHAP explanations.
+
+**To launch the app locally:**
+1. Ensure your environment is activated and all dependencies in `requirements.txt` are installed.
+2. Run the following command in the root directory:
+   ```bash
+   streamlit run app.py
+
 ## Technologies Used
-* **Languages:** Python
-* **Libraries:** Pandas, NumPy, Scikit-learn, XGBoost, SHAP, Seaborn, Matplotlib
+* **Language:** Python
+* **Data Processing:** Pandas, NumPy
+* **Machine Learning:** Scikit-learn, XGBoost
+* **Explainable AI (XAI):** SHAP
+* **Web App Deployment:** Streamlit
+* **Visualization:** Seaborn, Matplotlib
